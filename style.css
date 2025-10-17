@@ -87,7 +87,9 @@ h1 {
   font-weight: 600;
   transition: background 0.3s ease;
 }
-
+.color {
+    color: #0077ff;
+}
 .submit-btn:hover {
   background: #005fcc;
 }
