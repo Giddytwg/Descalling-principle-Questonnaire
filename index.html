@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Descaling Principles Self-Assessment</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div class="container">
+    <h1>Descaling Principles Self-Assessment</h1>
+    <p class="intro">
+      Rate how closely your organization aligns with each descaling principle.  
+      1 = Not at all · 5 = Fully adopted
+    </p>
+
+    <form id="descalingForm" class="form">
+      <!-- 1 -->
+      <div class="question">
+        <h3>1. Specialist Roles → Teams</h3>
+        <p>Are responsibilities like release, QA, and architecture handled by teams rather than individual specialists?</p>
+        <div class="scale" data-question="1"></div>
+      </div>
+
+      <!-- 2 -->
+      <div class="question">
+        <h3>2. Resource Thinking → People Thinking</h3>
+        <p>Do team members work strictly within role boundaries or are they encouraged to grow and contribute across disciplines?</p>
+        <div class="scale" data-question="2"></div>
+      </div>
+
+      <!-- 3 -->
+      <div class="question">
+        <h3>3. Organizing Around Tech → Customer Value</h3>
+        <p>Is your org structure tech-centric or customer-centric?</p>
+        <div class="scale" data-question="3"></div>
+      </div>
+
+      <!-- 4 -->
+      <div class="question">
+        <h3>4. Independent Teams → Cross-Team Cooperation</h3>
+        <p>How well do teams collaborate on shared goals versus working in silos?</p>
+        <div class="scale" data-question="4"></div>
+      </div>
+
+      <!-- 5 -->
+      <div class="question">
+        <h3>5. Coordinate to Integrate → Continuous Integration</h3>
+        <p>How often do teams integrate their work into a shared codebase?</p>
+        <div class="scale" data-question="5"></div>
+      </div>
+
+      <!-- 6 -->
+      <div class="question">
+        <h3>6. Projects → Products</h3>
+        <p>Is work managed as fixed-scope projects or ongoing product development?</p>
+        <div class="scale" data-question="6"></div>
+      </div>
+
+      <!-- 7 -->
+      <div class="question">
+        <h3>7. Many Small Products → Few Broad Products</h3>
+        <p>How unified are your product backlogs and ownership structures?</p>
+        <div class="scale" data-question="7"></div>
+      </div>
+
+      <!-- 8 -->
+      <div class="question">
+        <h3>8. Technical → User-Centric Backlog Items</h3>
+        <p>What percentage of backlog items could an end-user understand without extra explanation?</p>
+        <div class="scale" data-question="8"></div>
+      </div>
+
+      <!-- 9 -->
+      <div class="question">
+        <h3>9. Remote → Co-Located Collaboration</h3>
+        <p>How many days per week are teams co-located together physically?</p>
+        <div class="scale" data-question="9"></div>
+      </div>
+
+      <button type="submit" class="submit-btn">See My Result</button>
+    </form>
+
+    <section id="resultSection" class="result hidden">
+      <h2 id="resultTitle"></h2>
+      <p id="resultMessage"></p>
+      <a href="https://calendly.com/your-link" target="_blank" class="cta">Book a Free Consultation →</a>
+    </section>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
