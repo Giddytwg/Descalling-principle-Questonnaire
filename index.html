@@ -1,96 +1,194 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Descaling Principles Self-Assessment</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-  <div class="container">
-    <h1>Descaling Principles Self-Assessment</h1>
-    <p class="color">A test Build for Robert Briese's Upwork Job Post by Tope Gideon</p>
-    <p class="intro">
-      Rate how closely your organization aligns with each descaling principle.  
-      1 = Not at all · 5 = Fully adopted
-    </p>
-
-    <form id="descalingForm" class="form">
-      <!-- 1 -->
-      <div class="question">
-        <h3>1. Specialist Roles → Teams</h3>
-        <p>Are responsibilities like release, QA, and architecture handled by teams rather than individual specialists?</p>
-        <div class="scale" data-question="1"></div>
-      </div>
-
-      <!-- 2 -->
-      <div class="question">
-        <h3>2. Resource Thinking → People Thinking</h3>
-        <p>Do team members work strictly within role boundaries or are they encouraged to grow and contribute across disciplines?</p>
-        <div class="scale" data-question="2"></div>
-      </div>
-
-      <!-- 3 -->
-      <div class="question">
-        <h3>3. Organizing Around Tech → Customer Value</h3>
-        <p>Is your org structure tech-centric or customer-centric?</p>
-        <div class="scale" data-question="3"></div>
-      </div>
-
-      <!-- 4 -->
-      <div class="question">
-        <h3>4. Independent Teams → Cross-Team Cooperation</h3>
-        <p>How well do teams collaborate on shared goals versus working in silos?</p>
-        <div class="scale" data-question="4"></div>
-      </div>
-
-      <!-- 5 -->
-      <div class="question">
-        <h3>5. Coordinate to Integrate → Continuous Integration</h3>
-        <p>How often do teams integrate their work into a shared codebase?</p>
-        <div class="scale" data-question="5"></div>
-      </div>
-
-      <!-- 6 -->
-      <div class="question">
-        <h3>6. Projects → Products</h3>
-        <p>Is work managed as fixed-scope projects or ongoing product development?</p>
-        <div class="scale" data-question="6"></div>
-      </div>
-
-      <!-- 7 -->
-      <div class="question">
-        <h3>7. Many Small Products → Few Broad Products</h3>
-        <p>How unified are your product backlogs and ownership structures?</p>
-        <div class="scale" data-question="7"></div>
-      </div>
-
-      <!-- 8 -->
-      <div class="question">
-        <h3>8. Technical → User-Centric Backlog Items</h3>
-        <p>What percentage of backlog items could an end-user understand without extra explanation?</p>
-        <div class="scale" data-question="8"></div>
-      </div>
-
-      <!-- 9 -->
-      <div class="question">
-        <h3>9. Remote → Co-Located Collaboration</h3>
-        <p>How many days per week are teams co-located together physically?</p>
-        <div class="scale" data-question="9"></div>
-      </div>
-
-      <button type="submit" class="submit-btn">See My Result</button>
-    </form>
-
-    <section id="resultSection" class="result hidden">
-      <h2 id="resultTitle"></h2>
-      <p id="resultMessage"></p>
-      <a href="https://calendly.com/your-link" target="_blank" class="cta">Book a Free Consultation →</a>
-    </section>
+  <div class="quiz-container">
+  <div id="progress" class="progress-text"></div>
+  <div class="progress-bar">
+    <div id="progress-fill"></div>
   </div>
 
-  <script src="script.js"></script>
+  <form id="quizForm">
+
+    <!-- Question 1 -->
+    <div class="question active" data-id="1">
+      <h2 class="q-title">Specialist Roles</h2>
+      <p class="q-text">To what extent are responsibilities like releases, quality control, and architectural decisions handled by teams rather than assigned to specialist roles?</p>
+      <p class="scale-text">1 = Assigned to specialist roles; 5 = Owned collaboratively by teams</p>
+
+      <label><input type="radio" name="Specialist" value="1"> 1</label>
+      <label><input type="radio" name="Specialist" value="2"> 2</label>
+      <label><input type="radio" name="Specialist" value="3"> 3</label>
+      <label><input type="radio" name="Specialist" value="4"> 4</label>
+      <label><input type="radio" name="Specialist" value="5"> 5</label>
+
+      <div class="warning-message">Please select an option to continue</div>
+      <button type="button" class="next-btn">Next</button>
+    </div>
+
+    <!-- Question 2 -->
+    <div class="question" data-id="2">
+      <h2>People-Thinking</h2>
+      <p>Do team members operate strictly within a predefined role or grow across disciplines?</p>
+      <p class="scale-text">1 = Work only within role boundaries; 5 = Contribute across disciplines</p>
+
+      <label><input type="radio" name="People" value="1"> 1</label>
+      <label><input type="radio" name="People" value="2"> 2</label>
+      <label><input type="radio" name="People" value="3"> 3</label>
+      <label><input type="radio" name="People" value="4"> 4</label>
+      <label><input type="radio" name="People" value="5"> 5</label>
+
+      <div class="warning-message">Please select an option to continue</div>
+      <button type="button" class="next-btn">Next</button>
+    </div>
+
+    <!-- Question 3 -->
+    <div class="question" data-id="3">
+      <h2>Organizing Focus</h2>
+      <p>Is your organizational structure built around technical components or customer value streams?</p>
+      <p class="scale-text">1 = Tech-centric org chart; 5 = Customer-centric product teams</p>
+
+      <label><input type="radio" name="Organizing" value="1"> 1</label>
+      <label><input type="radio" name="Organizing" value="2"> 2</label>
+      <label><input type="radio" name="Organizing" value="3"> 3</label>
+      <label><input type="radio" name="Organizing" value="4"> 4</label>
+      <label><input type="radio" name="Organizing" value="5"> 5</label>
+
+      <div class="warning-message">Please select an option to continue</div>
+      <button type="button" class="next-btn">Next</button>
+    </div>
+
+    <!-- Question 4 -->
+    <div class="question" data-id="4">
+      <h2>Team Independence</h2>
+      <p>How much do teams collaborate across silos on a shared product?</p>
+      <p class="scale-text">1 = Teams work in isolation; 5 = Teams cooperate fluidly on shared goals</p>
+
+      <label><input type="radio" name="Team" value="1"> 1</label>
+      <label><input type="radio" name="Team" value="2"> 2</label>
+      <label><input type="radio" name="Team" value="3"> 3</label>
+      <label><input type="radio" name="Team" value="4"> 4</label>
+      <label><input type="radio" name="Team" value="5"> 5</label>
+
+      <div class="warning-message">Please select an option to continue</div>
+      <button type="button" class="next-btn">Next</button>
+    </div>
+
+    <!-- Question 5 -->
+    <div class="question" data-id="5">
+      <h2>Continuous Integration</h2>
+      <p>How frequently do team members integrate their work into the main codebase?</p>
+      <p class="scale-text">1 = Less than once per sprint; 5 = Multiple times per day</p>
+
+      <label><input type="radio" name="Continuous" value="1"> 1</label>
+      <label><input type="radio" name="Continuous" value="2"> 2</label>
+      <label><input type="radio" name="Continuous" value="3"> 3</label>
+      <label><input type="radio" name="Continuous" value="4"> 4</label>
+      <label><input type="radio" name="Continuous" value="5"> 5</label>
+
+      <div class="warning-message">Please select an option to continue</div>
+      <button type="button" class="next-btn">Next</button>
+    </div>
+
+    <!-- Question 6 -->
+    <div class="question" data-id="6">
+      <h2>Projects or Products</h2>
+      <p>Is work managed as fixed-scope projects or ongoing product development?</p>
+      <p class="scale-text">1 = Project-based; 5 = Continuous product development</p>
+
+      <label><input type="radio" name="Projects" value="1"> 1</label>
+      <label><input type="radio" name="Projects" value="2"> 2</label>
+      <label><input type="radio" name="Projects" value="3"> 3</label>
+      <label><input type="radio" name="Projects" value="4"> 4</label>
+      <label><input type="radio" name="Projects" value="5"> 5</label>
+
+      <div class="warning-message">Please select an option to continue</div>
+      <button type="button" class="next-btn">Next</button>
+    </div>
+
+    <!-- Question 7 -->
+    <div class="question" data-id="7">
+      <h2>Number of Backlogs</h2>
+      <p>Does each team manage its own backlog or is there one shared backlog?</p>
+      <p class="scale-text">1 = Each team has separate backlog; 5 = One shared backlog for all teams</p>
+
+      <label><input type="radio" name="Backlogs" value="1"> 1</label>
+      <label><input type="radio" name="Backlogs" value="2"> 2</label>
+      <label><input type="radio" name="Backlogs" value="3"> 3</label>
+      <label><input type="radio" name="Backlogs" value="4"> 4</label>
+      <label><input type="radio" name="Backlogs" value="5"> 5</label>
+
+      <div class="warning-message">Please select an option to continue</div>
+      <button type="button" class="next-btn">Next</button>
+    </div>
+
+    <!-- Question 8 -->
+    <div class="question" data-id="8">
+      <h2>Clarity of PBIs</h2>
+      <p>What percentage of backlog items are clear to an end-user without explanation?</p>
+      <p class="scale-text">1 = Less than 10%; 5 = More than 90%</p>
+
+      <label><input type="radio" name="Clarity" value="1"> 1</label>
+      <label><input type="radio" name="Clarity" value="2"> 2</label>
+      <label><input type="radio" name="Clarity" value="3"> 3</label>
+      <label><input type="radio" name="Clarity" value="4"> 4</label>
+      <label><input type="radio" name="Clarity" value="5"> 5</label>
+
+      <div class="warning-message">Please select an option to continue</div>
+      <button type="button" class="next-btn">Next</button>
+    </div>
+
+    <!-- Question 9 -->
+    <div class="question" data-id="9">
+      <h2>Team Co-location Frequency</h2>
+      <p>On average, how many days per week are all teams physically co-located?</p>
+      <p class="scale-text">1 = 0 days; 5 = 5 days</p>
+
+      <label><input type="radio" name="TeamCo" value="1"> 1</label>
+      <label><input type="radio" name="TeamCo" value="2"> 2</label>
+      <label><input type="radio" name="TeamCo" value="3"> 3</label>
+      <label><input type="radio" name="TeamCo" value="4"> 4</label>
+      <label><input type="radio" name="TeamCo" value="5"> 5</label>
+
+      <div class="warning-message">Please select an option to continue</div>
+      <button type="button" class="next-btn">Next</button>
+    </div>
+
+    <!-- Question 10: User Info -->
+    <div class="question" data-id="10">
+      <h2>User Info</h2>
+      <p>Please provide your full name, company, and email.</p>
+
+      <div class="form-group"><input type="text" name="fullName" placeholder="Full Name" required></div>
+      <div class="form-group"><input type="text" name="company" placeholder="Company" required></div>
+      <div class="form-group"><input type="email" name="email" placeholder="Email" required></div>
+
+      <button type="submit" class="submit-btn">Submit</button>
+    </div>
+
+  </form>
+
+  <!-- Result element -->
+  <div id="result" class="hidden">
+    <h2>Your Result</h2>
+    <p id="lowestRating"></p>
+    <canvas id="resultChart" width="400" height="300"></canvas>
+  </div>
+</div>
+
+<!-- suggestion element -->
+<div id="suggestion">
+  <h3 id="suggestion-title"></h3>
+  <p id="suggestion-text"></p>
+</div>
+
 </body>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="script.js"></script>
 </html>
